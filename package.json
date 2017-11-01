@@ -1,0 +1,23 @@
+{
+  "name": "jsu",
+  "version": "1.2.3",
+  "license": "Apache-2.0",
+  "author": "Philipp König",
+  "homepage": "https://blockbyte.de",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kiuryy/jsu"
+  },
+  "scripts": {
+    "init": "npm install --save-dev eslint && npm install --only=dev && node build/run.js",
+    "release": "eslint --fix src/js/**/* && eslint --fix build/**/* && node build/run.js"
+  },
+  "devDependencies": {
+    "create-file": "^1.0.1",
+    "del": "^3.0.0",
+    "eslint": "^4.10.0",
+    "glob-concat": "^1.0.1",
+    "read-file": "^0.2.0",
+    "uglify-es": "^3.1.6"
+  }
+}
