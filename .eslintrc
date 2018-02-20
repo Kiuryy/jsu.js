@@ -8,10 +8,6 @@
     "browser": true,
     "node": true
   },
-  "globals": {
-    "chrome": true,
-    "jsu": true
-  },
   "extends": [
     "eslint:recommended"
   ],
