@@ -1,23 +1,23 @@
 (() => {
     "use strict";
 
+    /* eslint-disable no-console */
     /* global build */
     global.path = {
         src: "src/",
         dist: "dist/",
-        tmp: "tmp/"
+        tmp: "__tmp/"
     };
 
     require("./_func");
     require("./_build");
 
-    console.log("Building release...");
+    console.log("Building release...\n");
 
-    let start = +new Date();
+    const start = +new Date();
     build.release().then(() => {
-        console.log("Release built successfully (" + (+new Date() - start) + "ms)");
+        console.log("\nRelease built successfully\t[" + (+new Date() - start) + " ms]");
     });
 
-    // Update devDependencies -> ncu -a
-    // Format code accordion to eslint rules -> eslint --fix src/js/**/*
+    // SCSS Filewatcher -> <PATH_TO_node>/npm.cmd run scss
 })();

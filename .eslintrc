@@ -1,6 +1,6 @@
 {
   "parserOptions": {
-    "ecmaVersion": 2017,
+    "ecmaVersion": 2018,
     "impliedStrict": true
   },
   "env": {
@@ -19,9 +19,10 @@
         "SwitchCase": 1
       }
     ],
+    "prefer-const": "error",
     "no-useless-escape": "off",
     "no-unused-vars": "off",
-    "no-console": "off",
+    "no-console": "error",
     "dot-notation": [
       "error",
       {
