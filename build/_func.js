@@ -9,7 +9,7 @@
             read: require("read-file"),
             remove: require("del"),
             createFile: require("create-file"),
-            uglifyjs: require("uglify-es"),
+            terser: require("terser"),
             exec: require("child_process").exec
         };
 
@@ -124,7 +124,7 @@
                 });
             });
         };
-        
+
         /**
          * Creates a file with the given content
          *
@@ -173,7 +173,7 @@
                     readFile(info.file).then((content) => { // read file
                         switch (info.ext) {
                             case "js": {
-                                const result = module.uglifyjs.minify(content, {
+                                const result = module.terser.minify(content, {
                                     output: {
                                         preamble: "/*! " + process.env.npm_package_name + " v" + process.env.npm_package_version + " | (c) " + process.env.npm_package_author_name + " under " + process.env.npm_package_license + " | " + process.env.npm_package_homepage + " */"
                                     },
