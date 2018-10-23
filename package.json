@@ -1,6 +1,6 @@
 {
   "name": "jsu",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "license": "Apache-2.0",
   "author": "Philipp König",
   "homepage": "https://blockbyte.de",
@@ -15,9 +15,9 @@
   "devDependencies": {
     "create-file": "^1.0.1",
     "del": "^3.0.0",
-    "eslint": "^5.6.1",
+    "eslint": "^5.7.0",
     "glob-concat": "^1.0.1",
     "read-file": "^0.2.0",
-    "terser": "^3.9.2"
+    "terser": "^3.10.2"
   }
 }
