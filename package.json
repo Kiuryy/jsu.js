@@ -9,15 +9,23 @@
     "url": "https://github.com/Kiuryy/jsu"
   },
   "scripts": {
-    "init": "npm install --only=dev && npm run release",
-    "release": "ncu -a --packageFile package.json && npm update && node build/run.js"
+    "init": "npm install --only=dev",
+    "release": "ncu -u --packageFile package.json && npm install --only=dev && node build.js"
   },
   "devDependencies": {
+    "concat": "^1.0.3",
     "create-file": "^1.0.1",
-    "del": "^3.0.0",
-    "eslint": "^5.7.0",
+    "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "fs-extra": "^8.0.1",
     "glob-concat": "^1.0.1",
+    "html-minifier": "^4.0.0",
+    "jsonminify": "^0.4.1",
+    "node-sass": "^4.12.0",
+    "npm-check-updates": "^3.1.9",
     "read-file": "^0.2.0",
-    "terser": "^3.10.2"
+    "request": "^2.88.0",
+    "terser": "^4.0.0",
+    "zip-dir": "^1.0.2"
   }
 }
