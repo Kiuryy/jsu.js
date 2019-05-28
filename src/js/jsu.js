@@ -122,8 +122,14 @@
                         });
                     }
 
+                    if (opts.header) {
+                        Object.entries(opts.header).forEach(([key, value]) => { // set additional headers
+                            xhr.setRequestHeader(key, value);
+                        });
+                    }
+
                     Object.entries(opts).forEach(([key, value]) => { // set specific variables
-                        if (key !== "method" && key !== "data") {
+                        if (key !== "method" && key !== "data" && key !== "header") {
                             xhr[key] = value;
                         }
                     });
@@ -855,10 +861,13 @@
                     const boundClientRect = node.getBoundingClientRect();
                     const computedStyle = window.getComputedStyle(node);
 
-                    let dim = boundClientRect[type];
+                    let dim = parseFloat((boundClientRect[type] + "").replace(/,/g, "."));
+
                     if (includeMargins) {
-                        dim += parseInt(computedStyle.getPropertyValue("margin-" + margins[0]));
-                        dim += parseInt(computedStyle.getPropertyValue("margin-" + margins[1]));
+                        margins.forEach((margin) => {
+                            const value = computedStyle.getPropertyValue("margin-" + margin);
+                            dim += parseFloat((value + "").replace(/,/g, "."));
+                        });
                     }
 
                     ret.push(dim);
