@@ -16,7 +16,11 @@
         process.exit(1);
     }
 
-    // SCSS Filewatcher -> <PATH_TO_node>/npm.cmd run scss
+    /**
+     *
+     * @type {Object}
+     */
+    let packageJson = {};
 
     /**
      * Starts building the application
@@ -25,7 +29,9 @@
         const start = +new Date();
         console.log("Building release...\n");
 
-        Func.cleanPre().then(() => {
+        loadPackageJson().then(() => {
+            return Func.cleanPre();
+        }).then(() => {
             return eslintCheck();
         }).then(() => {
             return js();
@@ -43,6 +49,29 @@
      */
 
     /**
+     * Read the package.json of the project and parse its JSON content into an object
+     *
+     * @returns {*}
+     */
+    const loadPackageJson = () => {
+        return Func.measureTime((resolve) => {
+            const fs = require("fs");
+
+            const rawData = fs.readFileSync("package.json");
+            const parsedData = JSON.parse(rawData);
+
+            if (parsedData) {
+                packageJson = parsedData;
+                packageJson.preamble = `(c) ${packageJson.author} under ${packageJson.license}`;
+                resolve();
+            } else {
+                console.error("Could not load package.json");
+                process.exit(1);
+            }
+        }, "Loaded package.json");
+    };
+
+    /**
      * Parses the js files and copies them to the dist directory
      *
      * @returns {Promise}
@@ -51,7 +80,7 @@
         return Func.measureTime((resolve) => {
             Func.minify([
                 path.src + "js/*.js"
-            ], path.dist).then(() => {
+            ], path.dist, true, packageJson.preamble).then(() => {
                 resolve();
             });
         }, "Moved js files to dist directory");
