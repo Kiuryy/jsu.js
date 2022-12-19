@@ -1,6 +1,6 @@
 {
   "name": "jsu.js",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "license": "Apache-2.0",
   "author": "Philipp König",
   "homepage": "https://redeviation.com/",
@@ -9,23 +9,23 @@
     "url": "https://github.com/Kiuryy/jsu"
   },
   "scripts": {
-    "init": "npm install --only=dev",
-    "release": "ncu -u --packageFile package.json && npm install --only=dev && node build.js"
+    "init": "npm install",
+    "release": "ncu -u --packageFile package.json && npm install && node build.js"
   },
   "devDependencies": {
     "concat": "^1.0.3",
     "create-file": "^1.0.1",
-    "del": "^6.1.1",
-    "eslint": "^8.17.0",
-    "fs-extra": "^10.1.0",
-    "glob-concat": "^1.0.2",
+    "del": "^7.0.0",
+    "eslint": "^8.30.0",
+    "fs-extra": "^11.1.0",
+    "glob-concat": "^1.0.3",
     "html-minifier": "^4.0.0",
     "jsonminify": "^0.4.2",
-    "node-sass": "^7.0.1",
-    "npm-check-updates": "^13.1.5",
+    "node-sass": "^8.0.0",
+    "npm-check-updates": "^16.6.0",
     "read-file": "^0.2.0",
     "request": "^2.88.2",
-    "terser": "^5.14.1",
+    "terser": "^5.16.1",
     "zip-dir": "^2.0.0"
   }
 }
