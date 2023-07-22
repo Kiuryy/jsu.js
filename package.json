@@ -1,6 +1,6 @@
 {
   "name": "jsu.js",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "license": "Apache-2.0",
   "author": "Philipp König",
   "homepage": "https://redeviation.com/",
@@ -16,16 +16,16 @@
     "concat": "^1.0.3",
     "create-file": "^1.0.1",
     "del": "^7.0.0",
-    "eslint": "^8.43.0",
+    "eslint": "^8.45.0",
     "fs-extra": "^11.1.1",
     "glob-concat": "^1.0.3",
     "html-minifier": "^4.0.0",
     "jsonminify": "^0.4.2",
-    "sass": "^1.63.6",
-    "npm-check-updates": "^16.10.13",
+    "sass": "^1.64.1",
+    "npm-check-updates": "^16.10.16",
     "read-file": "^0.2.0",
     "request": "^2.88.2",
-    "terser": "^5.18.2",
+    "terser": "^5.19.2",
     "zip-dir": "^2.0.0"
   }
 }
